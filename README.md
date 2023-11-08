@@ -13,8 +13,11 @@ This README describes the purpose of this repository and how to set up a develop
 This project requires:
 
 * Ruby 3.1.1, preferably managed using [rbenv][]
+* Bundler 2.4.21 (run `bundle update --bundler`)
+* gem 3.4.21
 * Node and Yarn 1.x (`npm install -g yarn`)
-* PostgreSQL must be installed and accepting connections
+* PostgreSQL must be installed and accepting connections (run `brew install postgresql` )
+
 
 On a Mac, you can obtain all of the above packages using [Homebrew][].
 

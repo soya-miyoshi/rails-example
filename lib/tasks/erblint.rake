@@ -1,11 +1,13 @@
-desc "Run erblint"
-task :erblint do
-  sh "bin/erblint --lint-all"
+# frozen_string_literal: true
+
+desc 'Run erblint'
+task erblint: :environment do
+  sh 'bin/erblint --lint-all'
 end
 
 namespace :erblint do
-  desc "Autocorrect erblint offenses"
-  task :autocorrect do
-    sh "bin/erblint --lint-all -a"
+  desc 'Autocorrect erblint offenses'
+  task autocorrect: :environment do
+    sh 'bin/erblint --lint-all -a'
   end
 end

@@ -1,4 +1,6 @@
-return unless Gem.loaded_specs.key?("rubocop")
+# frozen_string_literal: true
 
-require "rubocop/rake_task"
+return unless Gem.loaded_specs.key?('rubocop')
+
+require 'rubocop/rake_task'
 RuboCop::RakeTask.new

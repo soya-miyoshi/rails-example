@@ -1,6 +1,10 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
 
+require 'active_support/core_ext/integer/time'
+
+# rubocop:disable Metrics/BlockLength
 Rails.application.configure do
+  # rubocop:enable Metrics/BlockLength
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -49,20 +53,20 @@ Rails.application.configure do
   # config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = ENV["RAILS_DISABLE_SSL"].blank?
+  config.force_ssl = ENV['RAILS_DISABLE_SSL'].blank?
 
   # Log to $stdout by default
   config.logger = ActiveSupport::Logger.new($stdout)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+                                       .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+                                       .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Info include generic and useful information about system operation, but avoids logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
   # want to log everything, set the level to "debug".
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'info')
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -80,13 +84,13 @@ Rails.application.configure do
   # Production email config
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = {
-    api_token: ENV.fetch("POSTMARK_API_KEY", nil)
+    api_token: ENV.fetch('POSTMARK_API_KEY', nil)
   }
   config.action_mailer.default_url_options = {
-    host: "example.com",
-    protocol: "https"
+    host: 'example.com',
+    protocol: 'https'
   }
-  config.action_mailer.asset_host = "https://example.com"
+  config.action_mailer.asset_host = 'https://example.com'
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
